@@ -1,0 +1,186 @@
+# 🕒 TeamHub – Employee Attendance & Dashboard System
+
+TeamHub is a **modern employee portal** built with **React, Tailwind CSS, DaisyUI, and Framer Motion**, designed to manage **attendance, working hours, and employee activities** with a clean UI and smooth UX.
+
+---
+
+## 🚀 Features
+
+### ✅ Authentication (UI)
+
+* Login page with branding
+* Redirects to dashboard after login
+
+### ✅ Employee Dashboard
+
+* Welcome section with daily overview
+* Attendance summary cards
+* Performance & earnings placeholders
+
+### ✅ Clock In / Clock Out System
+
+* Live current time & date
+* Clock In / Clock Out buttons
+* Buttons auto-disable based on state
+* Real-time working hours counter
+* Status updates automatically (Working / Completed)
+
+### ✅ Persistent Attendance (LocalStorage)
+
+* Clock In time saved in localStorage
+* Working hours continue after page refresh
+* Clock Out time restored correctly
+* No data loss on reload
+
+### ✅ Global State with Context API
+
+* Centralized attendance state
+* Easy access across components
+* Single source of truth
+
+### ✅ Responsive Layout
+
+* Sidebar for navigation
+* Mobile toggle menu
+* Works on all screen sizes
+
+### ✅ Smooth Animations
+
+* Page-load animations using Framer Motion
+* Reusable animation wrapper
+
+---
+
+## 🧠 Tech Stack
+
+* **Frontend:** React (Vite)
+* **Styling:** Tailwind CSS + DaisyUI
+* **Icons:** Lucide-React
+* **Animations:** Framer Motion
+* **State Management:** React Context API
+* **Storage:** localStorage
+* **Routing:** React Router DOM
+* **Deployment:** Vercel
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Sidebar.jsx
+│   ├── HomePageLayout.jsx
+│
+├── components/Employee/
+│   ├── EmployeeDashboard.jsx
+│   ├── EmployeeAttendanceClock.jsx
+│   ├── Attendance.jsx
+│   ├── LeaveManagement.jsx
+│   ├── Payslip.jsx
+│
+├── context/
+│   └── EmployeeTimeContext.jsx
+│
+├── pages/
+│   ├── Login.jsx
+│   ├── HomePage.jsx
+│   └── ProfilePage.jsx
+│
+├── utils/
+│   └── MotionDiv.jsx
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🧩 Attendance Logic (How It Works)
+
+1. **Clock In**
+
+   * Stores timestamp in `localStorage`
+   * Starts live working timer
+   * Disables Clock In button
+
+2. **Working Hours**
+
+   * Calculated using timestamps (`Date.now()`)
+   * Updates every second
+   * Safe formatter prevents NaN issues
+
+3. **Clock Out**
+
+   * Saves clock-out timestamp
+   * Stops timer
+   * Freezes final working hours
+
+4. **Page Refresh**
+
+   * Context restores timestamps from localStorage
+   * Timer resumes automatically
+
+---
+
+## 🧠 Key Concepts Used
+
+* React Hooks (`useState`, `useEffect`, `useContext`)
+* Context API for global state
+* Time calculation using timestamps
+* LocalStorage persistence
+* Conditional UI rendering
+* Responsive design patterns
+
+---
+
+## ▶️ Running Locally
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open:
+👉 `http://localhost:5173`
+
+---
+
+## 🌍 Deployment (Vercel)
+
+Make sure you have a `vercel.json` file:
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+```
+
+This ensures React Router works correctly in production.
+
+---
+
+## 🔮 Future Enhancements
+
+* 🔐 Protected routes with authentication
+* 🌐 Backend integration (MongoDB / Firebase)
+* 📊 Monthly working hours report
+* ⏰ Late login & early logout detection
+* 👤 Multi-user attendance support
+* 📄 Payslip generation
+
+---
+
+## 👨‍💻 Author
+
+**Venkata Sai**
+Frontend Developer (React)
+
+
+
